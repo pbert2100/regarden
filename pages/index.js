@@ -12,7 +12,7 @@ export default function Home() {
 
       <div className='border-black border-b-2 bg-color-1'>
         <div className='min-h-screen grid md:grid-cols-2'>
-          <div className='grid place-items-center border-black border-r'>
+          <div className='grid place-items-center border-black border-b-2 md:border-r-2'>
             <section className='max-w-xl'>
               <h1 className='text-4xl mb-5'>One NFT to rule them all</h1>
               <p>Non laborum consectetur laborum sint aliqua magna ullamco quis. Excepteur cillum consectetur in voluptate officia enim eu sunt esse proident eu nostrud reprehenderit.</p>

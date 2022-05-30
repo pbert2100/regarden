@@ -141,7 +141,7 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
                     :
                     <div className='grid place-items-center'>
                         <p>Mint yout slot right know</p>
-                        <h1 className='text-4xl mb-5'>You need to connect you wallet!</h1>
+                        <h1 className='text-4xl mb-5 text-center'>You need to connect you wallet!</h1>
                         <button onClick={Connect}>
                             <div className='bg-black w-40 text-center cursor-pointer'>
                                 <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
