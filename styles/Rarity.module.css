@@ -1,0 +1,98 @@
+/* LIMITED */    
+  .limited {
+    width: 100%;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    padding: .2rem;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .limited_text {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+/* ROYAL */
+  .royal {
+    width: 100%;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #fe37a4 0%, #fd315d 8%, #9f2842 30%, #bd2f4e 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #ffacdf 8%, #d1647c 25%, #5d1f32 62.5%, #5d1f39 100%);
+    padding: .05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .royal_text {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #fe37a4 0%, #fd315d 8%, #9f2842 30%, #bd2f4e 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #ffacdf 8%, #d1647c 25%, #5d1f32 62.5%, #5d1f39 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+/* EPIC */
+  .epic {
+    width: 100%;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #feb837 0%, #fdb631 8%, #eb9617 30%, #e77b15 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #ffdeac 8%, #d1a564 25%, #f08826 62.5%, #c24e20 100%);
+    padding: .05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .epic_text {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #feb837 0%, #fdb631 8%, #eb9617 30%, #e77b15 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #ffdeac 8%, #d1a564 25%, #f08826 62.5%, #c24e20 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+/* LEGENDARY */
+  .legendary {
+    width: 100%;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #a437fe 0%, #c331fd 8%, #a817eb 30%, #8215e7 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #e5acff 8%, #b264d1 25%, #a626f0 62.5%, #6c20c2 100%);
+    padding: .05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .legendary_text {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #a437fe 0%, #c331fd 8%, #a817eb 30%, #8215e7 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #e5acff 8%, #b264d1 25%, #a626f0 62.5%, #6c20c2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+/* RARE */
+  .rare {
+    width: 100%;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #37e0fe 0%, #31a1fd 8%, #1b198b 30%, #2f2daf 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #acc6ff 8%, #6b64d1 25%, #143c79 62.5%, #152f83 100%);
+    padding: .05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .rare_text {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #37e0fe 0%, #31a1fd 8%, #1b198b 30%, #2f2daf 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #acc6ff 8%, #6b64d1 25%, #143c79 62.5%, #152f83 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+/* UNCOMMON */
+  .uncommon {
+    width: 100%;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #37fe79 0%, #31fd31 8%, #298305 30%, #018031 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #acffb3 8%, #64d176 25%, #1c7914 62.5%, #10771d 100%);
+    padding: .05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .uncommon_text {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #37fe79 0%, #31fd31 8%, #298305 30%, #018031 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #acffb3 8%, #64d176 25%, #1c7914 62.5%, #10771d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+/* COMMON */
+  .common {
+    width: 100%;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #e9e9e9 0%, #a7a7a7 8%, #494949 30%, #464646 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #dbdbdb 8%, #afafaf 25%, #727272 62.5%, #5c5c5c 100%);
+    padding: .05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .common_text {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #e9e9e9 0%, #a7a7a7 8%, #494949 30%, #464646 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #dbdbdb 8%, #afafaf 25%, #727272 62.5%, #5c5c5c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
