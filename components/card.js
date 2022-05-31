@@ -58,7 +58,7 @@ export default function Card(props) {
                 </div>
 
                 <div>
-                    <img className='rounded border-black border-2 object-cover object-center w-full h-full' src={props.src} />
+                    <img alt={props.name + 'Image'} className='rounded border-black border-2 object-cover object-center w-full h-full' src={props.src} />
                 </div>
 
                 <div className='mt-2 text-center'>

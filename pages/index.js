@@ -12,7 +12,7 @@ export default function Home() {
 
       <div className='border-black border-b-2 bg-color-1'>
         <div className='min-h-screen grid md:grid-cols-2'>
-          <div className='grid place-items-center border-black border-b-2 md:border-r-2'>
+          <div className='grid place-items-center border-black border-b-2 md:border-b-0 border-r-0 md:border-r-2'>
             <section className='max-w-xl'>
               <h1 className='text-4xl mb-5'>One NFT to rule them all</h1>
               <p>Non laborum consectetur laborum sint aliqua magna ullamco quis. Excepteur cillum consectetur in voluptate officia enim eu sunt esse proident eu nostrud reprehenderit.</p>
@@ -52,7 +52,7 @@ export default function Home() {
           <div className='bg-black w-full h-full rounded-xl'>
             <div className='p-5 bg-white rounded-xl border-black border-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 w-full h-full'>
               <div>
-                <img className='border-black border-2 object-cover object-center w-full h-full rounded' src="https://previews.123rf.com/images/brunoilfo/brunoilfo1303/brunoilfo130300002/18641538-%EA%B8%B0%ED%95%98%ED%95%99%EC%A0%81-%EB%B9%88%ED%8B%B0%EC%A7%80-%EB%A0%88%ED%8A%B8%EB%A1%9C-%EB%B2%BD%EC%A7%80-%EC%9B%90%ED%99%9C%ED%95%9C-%ED%8C%A8%ED%84%B4%EC%9D%98-%EA%B7%B8%EB%A6%BC.jpg" />
+                <img alt='Exclusive' className='border-black border-2 object-cover object-center w-full h-full rounded' src="https://previews.123rf.com/images/brunoilfo/brunoilfo1303/brunoilfo130300002/18641538-%EA%B8%B0%ED%95%98%ED%95%99%EC%A0%81-%EB%B9%88%ED%8B%B0%EC%A7%80-%EB%A0%88%ED%8A%B8%EB%A1%9C-%EB%B2%BD%EC%A7%80-%EC%9B%90%ED%99%9C%ED%95%9C-%ED%8C%A8%ED%84%B4%EC%9D%98-%EA%B7%B8%EB%A6%BC.jpg" />
               </div>
 
               <div>
@@ -65,7 +65,7 @@ export default function Home() {
           <div className='bg-black w-full h-full rounded-xl'>
             <div className='p-5 bg-white rounded-xl border-black border-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 w-full h-full'>
               <div>
-                <img className='border-black border-2 object-cover object-center w-full h-full rounded' src="https://previews.123rf.com/images/brunoilfo/brunoilfo1303/brunoilfo130300002/18641538-%EA%B8%B0%ED%95%98%ED%95%99%EC%A0%81-%EB%B9%88%ED%8B%B0%EC%A7%80-%EB%A0%88%ED%8A%B8%EB%A1%9C-%EB%B2%BD%EC%A7%80-%EC%9B%90%ED%99%9C%ED%95%9C-%ED%8C%A8%ED%84%B4%EC%9D%98-%EA%B7%B8%EB%A6%BC.jpg" />
+                <img alt='Community' className='border-black border-2 object-cover object-center w-full h-full rounded' src="https://previews.123rf.com/images/brunoilfo/brunoilfo1303/brunoilfo130300002/18641538-%EA%B8%B0%ED%95%98%ED%95%99%EC%A0%81-%EB%B9%88%ED%8B%B0%EC%A7%80-%EB%A0%88%ED%8A%B8%EB%A1%9C-%EB%B2%BD%EC%A7%80-%EC%9B%90%ED%99%9C%ED%95%9C-%ED%8C%A8%ED%84%B4%EC%9D%98-%EA%B7%B8%EB%A6%BC.jpg" />
               </div>
 
               <div>
@@ -78,7 +78,7 @@ export default function Home() {
           <div className='bg-black w-full h-full rounded-xl'>
             <div className='p-5 bg-white rounded-xl border-black border-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 w-full h-full'>
               <div>
-                <img className='border-black border-2 object-cover object-center w-full h-full rounded' src="https://previews.123rf.com/images/brunoilfo/brunoilfo1303/brunoilfo130300002/18641538-%EA%B8%B0%ED%95%98%ED%95%99%EC%A0%81-%EB%B9%88%ED%8B%B0%EC%A7%80-%EB%A0%88%ED%8A%B8%EB%A1%9C-%EB%B2%BD%EC%A7%80-%EC%9B%90%ED%99%9C%ED%95%9C-%ED%8C%A8%ED%84%B4%EC%9D%98-%EA%B7%B8%EB%A6%BC.jpg" />
+                <img alt='Rarity' className='border-black border-2 object-cover object-center w-full h-full rounded' src="https://previews.123rf.com/images/brunoilfo/brunoilfo1303/brunoilfo130300002/18641538-%EA%B8%B0%ED%95%98%ED%95%99%EC%A0%81-%EB%B9%88%ED%8B%B0%EC%A7%80-%EB%A0%88%ED%8A%B8%EB%A1%9C-%EB%B2%BD%EC%A7%80-%EC%9B%90%ED%99%9C%ED%95%9C-%ED%8C%A8%ED%84%B4%EC%9D%98-%EA%B7%B8%EB%A6%BC.jpg" />
               </div>
 
               <div>
@@ -107,7 +107,7 @@ export default function Home() {
             </div>
           </Link>
 
-          <img className='max-w-sm mt-10' src='/atv2.svg' alt=''></img>
+          <img alt='Ethereum' className='max-w-sm mt-10' src='/atv2.svg'></img>
         </div>
       </div>
     </>

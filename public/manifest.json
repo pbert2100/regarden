@@ -1,12 +1,13 @@
 {
     "theme_color": "#000000",
     "background_color": "#ffffff",
-    "display": "browser",
+    "display": "standalone",
     "scope": "/",
     "start_url": "/",
     "name": "Regarden",
     "short_name": "Regarden",
     "description": "Mint and customize your personal identity in a NFT based format!",
+    "prefer_related_applications": false,
     "icons": [
         {
             "src": "/icon-192x192.png",
@@ -27,6 +28,12 @@
             "src": "/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
-        }
+        },
+        {
+            "src": "/maskable_icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+          }
     ]
 }

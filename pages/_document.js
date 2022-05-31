@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
             <link rel="manifest" href="/manifest.json" />
             <link rel="apple-touch-icon" href="/icon.png" />
@@ -13,6 +13,8 @@ class MyDocument extends Document {
             <meta name='apple-mobile-web-app-capable' content='yes' />
             <meta name='apple-mobile-web-app-status-bar-style' content='default' />
             <meta name='apple-mobile-web-app-title' content='Regarden' />
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+            <meta http-equiv="content-language" content="en-US" />
             <meta name='format-detection' content='telephone=no' />
             <meta name='mobile-web-app-capable' content='yes' />
 
