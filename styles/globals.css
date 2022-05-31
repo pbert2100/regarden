@@ -33,6 +33,21 @@
     width: 83%;
   }
 
+  @media only screen and (max-width: 600px) {
+    section {
+      width: 92%;
+    }
+  }
+
+/* CARD */
+  .card {
+    height: 27rem;
+  }
+
+  .js-tilt-glare {
+    border-radius: 0.5rem;
+  }
+
 /* COLOR PALLETE */
   .bg-color-1 {
     background-color: #ff0066;

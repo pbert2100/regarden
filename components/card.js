@@ -51,17 +51,17 @@ export default function Card(props) {
   return (
     <div>
         <div className={rarity_color}>
-            <div className='rounded card card-bg w-full max-w-xs flex flex-col px-3'>
-                <div className='flex justify-between py-2'>
+            <div className='card rounded-xl w-full max-w-xs flex flex-col p-5'>
+                <div className='flex justify-between mb-2'>
                     <h1><span className={rarity_text}>{rarity}</span></h1>
                     <p>#{props.identifier}</p>
                 </div>
 
-                <div className='w-full h-full'>
-                    <img className='object-cover object-center w-full h-full rounded' src={props.src} />
+                <div>
+                    <img className='rounded border-black border-2 object-cover object-center w-full h-full' src={props.src} />
                 </div>
 
-                <div className='py-2 text-center'>
+                <div className='mt-2 text-center'>
                     <h1 className='text-sm'>{props.name}</h1>
                 </div>
             </div>
