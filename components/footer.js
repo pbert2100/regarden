@@ -6,7 +6,7 @@ export default function Footer() {
             <div className='py-10'>
                 <Link href='/'>
                     <div className='flex items-center cursor-pointer justify-center'>
-                        <img alt='Logo' src='/logo.svg' className='w-32' />
+                        <img alt='Logo' src='/try2.svg' className='w-32' />
                     </div>
                 </Link>
             </div>
