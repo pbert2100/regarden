@@ -15,22 +15,27 @@ export default function Home() {
         <div className='min-h-screen grid md:grid-cols-2'>
           <div className='grid place-items-center border-black border-b-2 md:border-b-0 border-r-0 md:border-r-2'>
             <section className='max-w-xl'>
-              <h1 className='text-4xl mb-5'>One NFT to rule them all</h1>
-              <p>Non laborum consectetur laborum sint aliqua magna ullamco quis. Excepteur cillum consectetur in voluptate officia enim eu sunt esse proident eu nostrud reprehenderit.</p>
-            
-              <Link href='/mint'>
-                <div className='bg-black w-40 text-center mt-5 cursor-pointer'>
-                  <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
-                    <h1>Get Started</h1>
-                  </div>
+              <div className='min-h-screen grid place-items-center'>
+                <div>
+                  <h1 className='text-4xl mb-5'>One NFT to rule them all</h1>
+                  <p>Mint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
+                
+
+                  <Link href='/mint'>
+                    <div className='bg-black w-40 text-center mt-5 cursor-pointer'>
+                      <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
+                        <h1>Get Started</h1>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             </section>
           </div>
 
-          <div className='border-black border-l bg-color-3 grid place-items-center'>
+          <div className='border-black border-l bg-color-3 py-20 grid place-items-center'>
             <section>
-              <img className='max-w-xl' src='/atv.svg' alt=''></img>
+              <img className='max-w-xl' src='/atv.svg' alt='Apresentation Image'></img>
             </section>
           </div>
         </div>
@@ -57,7 +62,7 @@ export default function Home() {
               </div>
 
               <div>
-                <h1 className='text-2xl my-2'>Exclusive, unique</h1>
+                <h1 className='text-2xl my-2'>Share you exclusivity</h1>
                 <p>Cillum exercitation aute aute dolore sunt adipisicing. Aute enim veniam sint do ullamco pariatur occaecat cupidatat cupidatat excepteur. Sint ipsum aute non ad aute. Reprehenderit ad nulla velit nostrud.</p>
               </div>
             </div>
