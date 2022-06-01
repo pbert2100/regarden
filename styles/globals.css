@@ -42,10 +42,19 @@
 /* CARD */
   .card {
     height: 27rem;
+    transform-style: preserve-3d;
   }
 
   .js-tilt-glare {
     border-radius: 0.5rem;
+  }
+
+  .inner {
+    transition: .1s ease-in-out;
+  }
+
+  .card:hover .inner {
+    transform: translateZ(35px);
   }
 
 /* COLOR PALLETE */

@@ -43,13 +43,15 @@ export default function Banner(props) {
   return (
     <div>
         <Link href={'/' + props.identifier}>
-            <div className='cursor-pointer glass glass-border rounded p-5 flex justify-between transition ease-in-out duration-200 hover:brightness-75'>
-                <div>
-                    <h1 className='digital text-sm mb-1'><span className={rarity_text}>{rarity}</span> <span className='text-xs text-neutral-600'>Tier</span></h1>
-                    <h1 className='digital text-xl glitch'>{props.name}</h1>
+            <div className='bg-black rounded cursor-pointer'>
+                <div className='border-2 border-black bg-white rounded p-5 flex justify-between transition ease-in-out duration-200 hover:brightness-95 hover:-translate-x-1 hover:-translate-y-1'>
+                    <div>
+                        <h1 className='text-sm mb-1'><span className={rarity_text}>{rarity}</span> <span className='text-xs text-neutral-600'>Tier</span></h1>
+                        <h1 className='text-xl'>{props.name}</h1>
+                    </div>
+                    
+                    <p>#{props.identifier}</p>
                 </div>
-                
-                <h1 className='digital mb-1 text-xs text-neutral-600'>#{props.identifier}</h1>
             </div>
         </Link>
     </div>

@@ -41,13 +41,13 @@ export default function Address({CONNECTION, S_URL, KEY, ADDRESS}) {
             let contract = new ethers.Contract(ADDRESS, contractABI, provider); // CREATING CONTRACT
             const slt = await contract.fetchSlotsByAddress(account); // FETCH SLOTS BY ADDRESS
 
-            let row = await createClient(S_URL, KEY).from('Slots').select('*').eq('address', account) // FETCH SLOT DATA BY ADDRESS FROM SUPABASE
+            let row = await createClient(S_URL, KEY).from('Adressess').select('*').eq('address', account) // FETCH SLOT DATA BY ADDRESS FROM SUPABASE
 
             let rowCount = 0; // ROW COUNTER (NECESSARY TO MATCH THE SUPABASE DATA WITH THE BLOCKCHAIN DATA)
 
             const s = await Promise.all(slt.map(async i => { // MAKING SLOT WITH THE BLOCKCHAIN AND SUPABASE DATA
                 let it = {id: String(i.id), address: i.sAddress, name: row.data[rowCount].name, rarity: String(i.rarity), verified: row.data[rowCount].verified,}
-                
+                console.log("it: " + it)
                 rowCount ++; // INCREMENT THE ROW COUNTER
                 return it
             }))
@@ -55,6 +55,10 @@ export default function Address({CONNECTION, S_URL, KEY, ADDRESS}) {
             setTotal(s.length);
             setSlots(s.slice(0, range));
             setRange(range + 10);
+
+            console.log("slt: " + slt)
+            console.log("row: " + row)
+            console.log("s: " + s)
         } catch(e) {
         }
     }
@@ -80,7 +84,7 @@ export default function Address({CONNECTION, S_URL, KEY, ADDRESS}) {
 
         <div className='border-b-2 border-black'>
             <section className='pt-32 pb-10'>
-                <div className='mb-5'>
+                <div>
                     <p className='mb-1'>Address</p>
                     <h1 className='text-2xl break-all'>{account}</h1>
                 </div>
@@ -89,7 +93,7 @@ export default function Address({CONNECTION, S_URL, KEY, ADDRESS}) {
             </section>
         </div>
 
-        <div className='bg-color-4'>
+        <div className='min-h-screen bg-color-4'>
             <section className='py-10'>
                 <div className='mb-5 flex items-end'>
                     <h1 className='text-2xl'>Slots</h1>

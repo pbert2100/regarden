@@ -50,19 +50,19 @@ export default function Card(props) {
 
   return (
     <div>
-        <div className={rarity_color}>
-            <div className='card rounded-xl w-full max-w-xs flex flex-col p-5'>
-                <div className='flex justify-between mb-2'>
+        <div>
+            <div data-tilt data-tilt-reverse="true" className='border-2 border-black card rounded-xl w-full max-w-xs flex flex-col p-5'>
+                <div className='inner flex justify-between mb-3'>
                     <h1><span className={rarity_text}>{rarity}</span></h1>
                     <p>#{props.identifier}</p>
                 </div>
 
-                <div>
-                    <img alt={props.name + 'Image'} className='rounded border-black border-2 object-cover object-center w-full h-full' src={props.src} />
+                <div className='inner w-full h-full'>
+                    <img alt={props.name + 'Image'} className='object-cover object-center w-full h-full rounded border-black border-2' src={props.src} />
                 </div>
 
-                <div className='mt-2 text-center'>
-                    <h1 className='text-sm'>{props.name}</h1>
+                <div className='inner mt-3 text-center'>
+                    <h1>{props.name}</h1>
                 </div>
             </div>
         </div>
