@@ -130,7 +130,7 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
                                 <form onSubmit={MintSlot} className='flex flex-col gap-3'>
                                     <input placeholder='Name' className='border-black border-2 p-2 transition ease-in-out duration-200 outline-none hover:brightness-95 focus:brightness-95' onChange={e => updateFormInput({ ...formInput, name: e.target.value })}/>
                                     <input placeholder='Image URL' className='border-black border-2 p-2 transition ease-in-out duration-200 outline-none hover:brightness-95 focus:brightness-95' onChange={e => updateFormInput({ ...formInput, imageURL: e.target.value })}/>
-                                    <p className='my-2 text-sm'>By minting a slot you agree with the <Link href="/about"><span className='underline cursor-pointer'>Terms of Use</span></Link>!</p>
+                                    <p className='text-sm'>Mint price: 0,0018 ETH</p>
                                     
                                     {isLoading ?
                                         <div className="loading loading--full-height" />
@@ -144,6 +144,7 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
                                         </button>
                                     }
                                 </form>
+                                <p className='mt-3 text-sm'>By minting a slot you agree with the <Link href="/about"><span className='underline cursor-pointer'>Terms of Use</span></Link>!</p>
                             </div>
                         </div>
                         :

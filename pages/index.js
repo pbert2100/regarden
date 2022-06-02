@@ -29,7 +29,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='pt-20 md:pt-0 grid'>
+            <div className='pt-20 md:pt-0'>
               <img className='max-w-xl' src='/atv.svg' alt='Instruction Image'></img>
             </div>
           </section>
@@ -75,12 +75,12 @@ export default function Home() {
         </div>
 
         <div className='py-5 w-full bg-black text-white text-center'>
-          <h1 className='text-lg md:text-xl'>The simplicity tastes different...</h1>
+          <h1 className='text-lg md:text-xl'>The simplicity looks different...</h1>
         </div>
 
         <div className='border-black border-b-2 min-h-screen grid place-items-center text-center'>
           <div className='flex flex-col items-center'>
-            <h1 className='text-3xl md:text-4xl mb-5'>Join the community!</h1>
+            <h1 className='text-3xl md:text-4xl mb-5'>Be connected to the community!</h1>
             <p className='text-lg md:max-w-xl'>Lorem cillum anim excepteur tempor voluptate duis id deserunt in pariatur cillum eiusmod fugiat. Duis voluptate fugiat tempor id ut.</p>
           
             <Link href='/mint'>
@@ -91,7 +91,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <img alt='Ethereum' className='max-w-sm mt-10' src='/atv2.svg'></img>
+            <img alt='Ethereum' className='max-w-xs mt-10' src='/atv2.svg'></img>
           </div>
         </div>
 

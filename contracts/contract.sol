@@ -7,7 +7,7 @@ contract VI {
 
     constructor() {
         owner = payable(msg.sender);
-        mintPrice = 1765150284895256;
+        mintPrice = 1800000000000000;
     }
 
     modifier isOwner() {

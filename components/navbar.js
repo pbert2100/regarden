@@ -1,16 +1,10 @@
 import { LoginContext } from '../contexts/handleLogin.js';
 import { useState, useContext } from 'react';
-import { motion } from "framer-motion";
 import Link from 'next/link';
 
 export default function Navbar() {
     const {isLoggedIn, substringAccount, currentAccount, Connect} = useContext(LoginContext);
     const [isOpen, setIsOpen] = useState(false);
-
-    const variants = {
-        open: { opacity: 1, y: 0},
-        closed: { opacity: 1, y: "-100%", display: 'none'},
-      }
 
     async function handleMenu() {
         if(isOpen == false) {
@@ -21,8 +15,8 @@ export default function Navbar() {
     }
 
     return (
-        <nav id='container' className='fixed w-full'>
-            <div id='nav' className='py-5 border-black border-b-2 bg-white z-50'>
+        <nav id='container' className='fixed w-full z-50'>
+            <div id='nav' className='py-5 border-black border-b-2 bg-white'>
                 <section className='flex items-center justify-between'>
                     <Link href='/'>
                         <div className='flex items-center cursor-pointer justify-center'>
@@ -68,7 +62,7 @@ export default function Navbar() {
                 </section>
             </div>
 
-            <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
+            {isOpen ?
                 <div className='w-full p-5 md:hidden border-b-2 border-black bg-white'>
                     <div className='flex flex-col items-center'>
                         <Link href='/mint'>
@@ -98,7 +92,9 @@ export default function Navbar() {
                         }
                     </div>
                 </div>
-            </motion.nav>
+                :
+                <></>
+            }
         </nav>
     )
 }
