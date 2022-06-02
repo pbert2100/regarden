@@ -1,15 +1,18 @@
 import { LoginProvider } from '../contexts/handleLogin.js';
+import { AnimatePresence } from "framer-motion";
 import NextNProgress from 'nextjs-progressbar';
 import Navbar from '../components/navbar.js';
 import Footer from '../components/footer.js';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <LoginProvider>
-      <NextNProgress color="black" height={3} options={{ showSpinner: false }} />
+      <NextNProgress color="#fdc62d" height={3} options={{ showSpinner: false }} />
       <Navbar />
-      <Component {...pageProps} />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
       <Footer />
     </LoginProvider>
   )

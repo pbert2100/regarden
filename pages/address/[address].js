@@ -4,6 +4,7 @@ import Banner from '../../components/banner.js';
 import Panel from '../../components/panel.js';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { motion } from "framer-motion";
 import { ethers } from 'ethers';
 import Head from 'next/head';
 
@@ -82,51 +83,53 @@ export default function Address({CONNECTION, S_URL, KEY, ADDRESS}) {
 
         <Warning />
 
-        <div className='border-b-2 border-black'>
-            <section className='pt-32 pb-10'>
-                <div>
-                    <p className='mb-1'>Address</p>
-                    <h1 className='text-2xl break-all'>{account}</h1>
-                </div>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <div className='border-b-2 border-black'>
+                <section className='pt-32 pb-10'>
+                    <div>
+                        <p className='mb-1'>Address</p>
+                        <h1 className='text-2xl break-all'>{account}</h1>
+                    </div>
 
-                <Panel />
-            </section>
-        </div>
+                    <Panel />
+                </section>
+            </div>
 
-        <div className='min-h-screen'>
-            <section className='py-10'>
-                <div className='mb-5 flex items-end'>
-                    <h1 className='text-2xl'>Slots</h1>
-                    <p className='ml-2'>[{total}]</p>
-                </div>
-                
-                <div>
-                    {slots.length > 0 && slots.map((slot, key) => (
-                        <div key={key} className='mb-3'>
-                            <Banner identifier={slot.id} rarity={slot.rarity} name={slot.name}/>
-                        </div>
-                    ))}
+            <div className='min-h-screen'>
+                <section className='py-10'>
+                    <div className='mb-5 flex items-end'>
+                        <h1 className='text-2xl'>Slots</h1>
+                        <p className='ml-2'>[{total}]</p>
+                    </div>
+                    
+                    <div>
+                        {slots.length > 0 && slots.map((slot, key) => (
+                            <div key={key} className='mb-3'>
+                                <Banner identifier={slot.id} rarity={slot.rarity} name={slot.name}/>
+                            </div>
+                        ))}
 
-                    {slots.length == 0 && <div className='rounded bg-black'><p className='p-5 rounded bg-white border-black border-2 -translate-x-1 -translate-y-1'>This address has no slots yet!</p></div>}
+                        {slots.length == 0 && <div className='rounded bg-black'><p className='p-5 rounded bg-white border-black border-2 -translate-x-1 -translate-y-1'>This address has no slots yet!</p></div>}
 
-                    {total + 11 > range ?
-                        <>
-                            {isLoading ?
-                                <div className='w-full grid place-items-center mb-20 mt-10'>
-                                    <div className='py-2 w-full sm:max-w-xs'>
-                                        <div className="loading loading--full-height" />
+                        {total + 11 > range ?
+                            <>
+                                {isLoading ?
+                                    <div className='w-full grid place-items-center mb-20 mt-10'>
+                                        <div className='py-2 w-full sm:max-w-xs'>
+                                            <div className="loading loading--full-height" />
+                                        </div>
                                     </div>
-                                </div>
-                                :
-                                <div className='w-full grid place-items-center mb-20 mt-10'><button id='loadMore' onClick={loadMore} className='py-2 w-full sm:max-w-xs text-black bg-white'><h1 className='digital'>Load More _</h1></button></div>
-                            }
-                        </>
-                        :
-                        <></>
-                    }
-                </div>
-            </section>
-        </div>
+                                    :
+                                    <div className='w-full grid place-items-center mb-20 mt-10'><button id='loadMore' onClick={loadMore} className='py-2 w-full sm:max-w-xs text-black bg-white'><h1 className='digital'>Load More _</h1></button></div>
+                                }
+                            </>
+                            :
+                            <></>
+                        }
+                    </div>
+                </section>
+            </div>
+        </motion.div>
     </>
   )
 }

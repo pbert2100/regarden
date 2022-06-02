@@ -27,7 +27,7 @@ export default function Navbar() {
                     <div className='hidden lg:grid grid-cols-2 items-center text-center gap-3'>
                         <Link href='/mint'>
                             <div className='bg-black w-40 text-center cursor-pointer'>
-                                <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
+                                <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
                                     <h1>Get Started</h1>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@ export default function Navbar() {
                         {isLoggedIn ?
                             <Link href={"/address/" + currentAccount}>
                                 <div className='bg-black w-40 text-center cursor-pointer'>
-                                    <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
+                                    <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
                                         <h1>{substringAccount}</h1>
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@ export default function Navbar() {
                             :
                             <button onClick={Connect}>
                                 <div className='bg-black w-40 text-center cursor-pointer'>
-                                    <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
+                                    <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
                                         <h1>Connect Wallet</h1>
                                     </div>
                                 </div>

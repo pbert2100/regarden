@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Panel from '../components/panel.js';
 import Card from '../components/card.js';
 import { useRouter } from 'next/router';
+import { motion } from "framer-motion";
 import { ethers } from 'ethers';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -58,18 +59,20 @@ export default function Slot({CONNECTION, S_URL, KEY, ADDRESS}) {
 
         <Warning />
 
-        <section className='min-h-screen pt-28 flex flex-col items-center mb-14'>
-            <Card identifier={slot.id} rarity={slot.rarity} src={slot.imageURL} name={slot.name} />
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <section className='min-h-screen pt-28 flex flex-col items-center mb-14'>
+                <Card identifier={slot.id} rarity={slot.rarity} src={slot.imageURL} name={slot.name} />
 
-            <Panel link={slot.address} />
+                <Panel link={slot.address} />
 
-            <div className='mt-10 border-black border-2 rounded p-5'>
-                <p className='mb-1 text-sm'>Owned by</p>
-                <Link href={"/address/" + slot.address}><h1 className='cursor-pointer text-2xl break-all mb-5'>{slot.address}</h1></Link>
-                <p className='mb-1 text-sm'>Seed</p>
-                <h1 className='text-2xl'>{slot.seed}</h1>
-            </div>
-        </section>
+                <div className='mt-10 border-black border-2 rounded p-5'>
+                    <p className='mb-1 text-sm'>Owned by</p>
+                    <Link href={"/address/" + slot.address}><h1 className='cursor-pointer text-2xl break-all mb-5'>{slot.address}</h1></Link>
+                    <p className='mb-1 text-sm'>Seed</p>
+                    <h1 className='text-2xl'>{slot.seed}</h1>
+                </div>
+            </section>
+        </motion.div>
     </>
   )
 }

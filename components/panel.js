@@ -12,7 +12,7 @@ export default function Panel(props) {
     <div className='flex gap-5 mt-5'>
         <button onClick={copyLink}>
             <div className='bg-black w-40 text-center cursor-pointer'>
-                <div className='border-black border-2 bg-color-5 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
+                <div className='border-black border-2 bg-color-5 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
                     <h1>Copy Link</h1>
                 </div>
             </div>
@@ -20,7 +20,7 @@ export default function Panel(props) {
 
         <Link href={"https://etherscan.io/address/" + props.link}>
             <div className='bg-black w-40 text-center cursor-pointer'>
-                <div className='border-black border-2 bg-color-5 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
+                <div className='border-black border-2 bg-color-5 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
                     <h1>Ethersan</h1>
                 </div>
             </div>

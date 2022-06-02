@@ -12,7 +12,7 @@ export default function Warning() {
                 <p className='mb-5 text-lg'>Link copied to clipboard!</p>
                 <button onClick={closeWarning} className='w-full'>
                     <div className='bg-black cursor-pointer'>
-                        <div className='border-black border-2 bg-color-1 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
+                        <div className='border-black border-2 bg-color-1 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
                             <h1>X</h1>
                         </div>
                     </div>

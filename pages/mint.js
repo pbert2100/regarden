@@ -2,6 +2,7 @@ import { LoginContext } from '../contexts/handleLogin.js';
 import { createClient } from '@supabase/supabase-js';
 import { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
+import { motion } from "framer-motion";
 import { ethers } from 'ethers';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -101,59 +102,61 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
             <meta name="description" content="Mint your personal slot in a NFT based format." />
         </Head>
 
-        <div id='errorModal' className='bg-black bg-opacity-75 min-h-screen w-full flex justify-center items-center fixed hidden z-10'>
-            <section className='flex justify-center'>
-                <div className='max-w-md w-full bg-white rounded border-black border-2 p-5'>
-                    {errorMessages.map((errorMessages, key) => (
-                        <p key={key} className='mb-5'>&#128204; {errorMessages} !</p>
-                    ))}
-                    <button onClick={closeWarning} className='w-full'>
-                        <div className='bg-black cursor-pointer'>
-                            <div className='border-black border-2 bg-color-1 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
-                                <h1>X</h1>
-                            </div>
-                        </div>
-                    </button>
-                </div>
-            </section>
-        </div>
-
-        <div className='min-h-screen grid place-items-center'>
-            <section className='grid place-items-center'>
-                {substringAccount ?
-                    <div className='rounded-xl bg-black'>
-                        <div className='p-5 border-black border-2 rounded-xl bg-white -translate-x-1 -translate-y-1'>
-                            <p className='mb-1'>Hi, {substringAccount}</p>
-                            <h1 className='text-3xl mb-5'>Get started!</h1>
-                            <form onSubmit={MintSlot} className='flex flex-col gap-3'>
-                                <input placeholder='Name' className='border-black border-2 p-2' onChange={e => updateFormInput({ ...formInput, name: e.target.value })}/>
-                                <input placeholder='Image URL' className='border-black border-2 p-2' onChange={e => updateFormInput({ ...formInput, imageURL: e.target.value })}/>
-                                <p className='my-2'>By minting a slot you agree with the <Link href="/about"><span className='underline cursor-pointer'>Terms of Use</span></Link></p>
-                                <button type='submit'>
-                                    <div className='bg-black cursor-pointer'>
-                                        <div className='border-black border-2 bg-color-5 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
-                                            <h1>Mint</h1>
-                                        </div>
-                                    </div>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    :
-                    <div className='grid place-items-center'>
-                        <p>Mint yout slot right know</p>
-                        <h1 className='text-4xl mb-5 text-center mt-1'>You need to connect your wallet!</h1>
-                        <button onClick={Connect}>
-                            <div className='bg-black w-40 text-center cursor-pointer'>
-                                <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
-                                    <h1>Connect Wallet</h1>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <div id='errorModal' className='bg-black bg-opacity-75 min-h-screen w-full flex justify-center items-center fixed hidden z-10'>
+                <section className='flex justify-center'>
+                    <div className='max-w-md w-full bg-white rounded border-black border-2 p-5'>
+                        {errorMessages.map((errorMessages, key) => (
+                            <p key={key} className='mb-5'>&#128204; {errorMessages} !</p>
+                        ))}
+                        <button onClick={closeWarning} className='w-full'>
+                            <div className='bg-black cursor-pointer'>
+                                <div className='border-black border-2 bg-color-1 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
+                                    <h1>X</h1>
                                 </div>
                             </div>
                         </button>
                     </div>
-                }
-            </section>
-        </div>
+                </section>
+            </div>
+
+            <div className='min-h-screen grid place-items-center'>
+                <section className='grid place-items-center'>
+                    {substringAccount ?
+                        <div className='rounded-xl bg-black'>
+                            <div className='p-5 border-black border-2 rounded-xl bg-white -translate-x-1 -translate-y-1'>
+                                <p className='mb-1'>Hi, {substringAccount}</p>
+                                <h1 className='text-3xl mb-5'>Get started!</h1>
+                                <form onSubmit={MintSlot} className='flex flex-col gap-3'>
+                                    <input placeholder='Name' className='border-black border-2 p-2' onChange={e => updateFormInput({ ...formInput, name: e.target.value })}/>
+                                    <input placeholder='Image URL' className='border-black border-2 p-2' onChange={e => updateFormInput({ ...formInput, imageURL: e.target.value })}/>
+                                    <p className='my-2 text-sm'>By minting a slot you agree with the <Link href="/about"><span className='underline cursor-pointer'>Terms of Use</span></Link>!</p>
+                                    <button type='submit'>
+                                        <div className='bg-black cursor-pointer'>
+                                            <div className='border-black border-2 bg-color-5 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
+                                                <h1>Mint</h1>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        :
+                        <div className='grid place-items-center'>
+                            <p>Mint yout slot right know</p>
+                            <h1 className='text-3xl md:text-4xl mb-5 text-center mt-1'>You need to connect your wallet!</h1>
+                            <button onClick={Connect}>
+                                <div className='bg-black w-40 text-center cursor-pointer'>
+                                    <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
+                                        <h1>Connect Wallet</h1>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    }
+                </section>
+            </div>
+        </motion.div>
     </>
   )
 }

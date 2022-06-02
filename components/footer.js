@@ -10,7 +10,7 @@ export default function Footer() {
                     </div>
                 </Link>
 
-                <div className='grid grid-cols-2 gap-10 items-end'>
+                <div className='grid sm:grid-cols-2 gap-10 items-end text-center'>
                     <Link href='/mint'><h1 className='cursor-pointer hover:underline'>Get Started</h1></Link>
                     <Link href='/about'><h1 className='cursor-pointer hover:underline'>About</h1></Link>
                 </div>
