@@ -15,10 +15,10 @@ export default function Home() {
         <section className='grid md:grid-cols-2 py-20 gap-10'>
           <div className='grid place-items-center'>
             <div>
-              <h1 className='text-4xl mb-5'>One NFT to rule them all</h1>
-              <p className='text-xl'>Mint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
+              <h1 className='text-3xl md:text-4xl mb-5'>One NFT to rule them all</h1>
+              <p className='text-lg md:text-xl'>Mint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
               <Link href='/mint'>
-                <div className='bg-black w-40 text-center mt-10 cursor-pointer'>
+                <div className='bg-black w-40 text-center mt-5 cursor-pointer'>
                   <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
                     <h1>Get Started</h1>
                   </div>
@@ -36,13 +36,13 @@ export default function Home() {
       <div className='border-black border-b-2'>
         <section className='grid md:grid-cols-2 py-20 gap-10'>
           <div>
-            <h1 className='text-4xl mb-5'>X-Ray</h1>
-            <p className='text-xl mb-5'>Each virtual identity has a corresponding slot in the smart contract indexed by a unique number! The rarity of the slot is also stored in the smart contract, making it immutable.</p>
-            <p className='text-xl mb-5'>You can edit some data of your virtual identity, such as name and image Off Chain data is editable</p>
+            <h1 className='text-3xl md:text-4xl mb-5'>X-Ray</h1>
+            <p className='text-lg md:text-xl mb-5'>Each virtual identity has a corresponding slot in the smart contract indexed by a unique number! The rarity of the slot is also stored in the smart contract, making it immutable.</p>
+            <p className='text-lg md:text-xl mb-5'>You can edit some data of your virtual identity, such as name and image Off Chain data is editable</p>
           
             <div className='flex'>
               <Link href='/about'>
-                <p className='text-lg cursor-pointer underline'>Read more</p>
+                <p className='md:text-lg cursor-pointer underline'>Read more</p>
               </Link>
             </div>
           </div>
@@ -56,12 +56,12 @@ export default function Home() {
       <div className='border-black border-b-2'>
         <section className='grid md:grid-cols-2 py-20 gap-10'>
           <div>
-            <h1 className='text-4xl mb-5'>Share your exclusivity</h1>
-            <p className='text-xl mb-5'>Code free experience Off-chain dataMint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
+            <h1 className='text-3xl md:text-4xl mb-5'>Share your exclusivity</h1>
+            <p className='text-lg md:text-xl mb-5'>Code free experience Off-chain dataMint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
             
             <div className='flex'>
               <Link href='/0'>
-                <p className='text-lg cursor-pointer underline'>Take a look</p>
+                <p className='md:text-lg cursor-pointer underline'>Take a look</p>
               </Link>
             </div>
           </div>
@@ -73,16 +73,16 @@ export default function Home() {
       </div>
 
       <div className='py-5 w-full bg-black text-white text-center'>
-        <h1 className='text-xl'>The simplicity tastes different...</h1>
+        <h1 className='text-lg md:text-xl'>The simplicity tastes different...</h1>
       </div>
 
       <div className='border-black border-b-2 min-h-screen grid place-items-center text-center'>
         <div className='flex flex-col items-center'>
-          <h1 className='text-5xl mb-5'>Join the community!</h1>
-          <p className='max-w-2xl'>Lorem cillum anim excepteur tempor voluptate duis id deserunt in pariatur cillum eiusmod fugiat. Duis voluptate fugiat tempor id ut.</p>
+          <h1 className='text-3xl md:text-4xl mb-5'>Join the community!</h1>
+          <p className='text-lg md:max-w-xl'>Lorem cillum anim excepteur tempor voluptate duis id deserunt in pariatur cillum eiusmod fugiat. Duis voluptate fugiat tempor id ut.</p>
         
           <Link href='/mint'>
-            <div className='bg-black w-40 text-center mt-10 cursor-pointer'>
+            <div className='bg-black w-40 text-center mt-5 cursor-pointer'>
               <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
                 <h1>Get Started</h1>
               </div>
@@ -95,7 +95,7 @@ export default function Home() {
 
       <div className='bg-color-1'>
         <section className='py-10 grid place-items-center'>
-          <h1 className='text-3xl'>Looking for someone?</h1>
+          <h1 className='text-2xl md:text-3xl'>Looking for someone?</h1>
           <p>With regarden you can find anyone with their number ID!</p>
 
           <div className='flex flex-items-center mt-5'>
