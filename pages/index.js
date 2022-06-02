@@ -91,7 +91,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <img alt='Ethereum' className='max-w-xs mt-10' src='/atv2.svg'></img>
+            <img alt='Ethereum' className='max-w-xs mt-10' src='/tomada.svg'></img>
           </div>
         </div>
 
