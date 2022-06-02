@@ -120,24 +120,29 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
                 </section>
             </div>
 
-            <div className='min-h-screen grid place-items-center'>
+            <div className='min-h-screen grid place-items-center bg-color-2'>
                 <section className='grid place-items-center'>
-                    {substringAccount ?
+                    {isLoggedIn ?
                         <div className='rounded-xl bg-black'>
                             <div className='p-5 border-black border-2 rounded-xl bg-white -translate-x-1 -translate-y-1'>
                                 <p className='mb-1'>Hi, {substringAccount}</p>
                                 <h1 className='text-3xl mb-5'>Get started!</h1>
                                 <form onSubmit={MintSlot} className='flex flex-col gap-3'>
-                                    <input placeholder='Name' className='border-black border-2 p-2' onChange={e => updateFormInput({ ...formInput, name: e.target.value })}/>
-                                    <input placeholder='Image URL' className='border-black border-2 p-2' onChange={e => updateFormInput({ ...formInput, imageURL: e.target.value })}/>
+                                    <input placeholder='Name' className='border-black border-2 p-2 transition ease-in-out duration-200 outline-none hover:brightness-95 focus:brightness-95' onChange={e => updateFormInput({ ...formInput, name: e.target.value })}/>
+                                    <input placeholder='Image URL' className='border-black border-2 p-2 transition ease-in-out duration-200 outline-none hover:brightness-95 focus:brightness-95' onChange={e => updateFormInput({ ...formInput, imageURL: e.target.value })}/>
                                     <p className='my-2 text-sm'>By minting a slot you agree with the <Link href="/about"><span className='underline cursor-pointer'>Terms of Use</span></Link>!</p>
-                                    <button type='submit'>
-                                        <div className='bg-black cursor-pointer'>
-                                            <div className='border-black border-2 bg-color-5 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
-                                                <h1>Mint</h1>
+                                    
+                                    {isLoading ?
+                                        <div className="loading loading--full-height" />
+                                        :    
+                                        <button type='submit'>
+                                            <div className='bg-black cursor-pointer'>
+                                                <div className='border-black border-2 bg-color-5 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
+                                                    <h1>Mint</h1>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </button>
+                                        </button>
+                                    }
                                 </form>
                             </div>
                         </div>

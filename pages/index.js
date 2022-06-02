@@ -14,7 +14,7 @@ export default function Home() {
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
         <div className='border-black border-b-2 min-h-screen grid place-items-center'>
-          <section className='grid md:grid-cols-2 py-20 gap-10'>
+          <section className='grid md:grid-cols-2 gap-10'>
             <div className='grid place-items-center'>
               <div>
                 <h1 className='text-3xl md:text-4xl mb-5'>One NFT to rule them all</h1>

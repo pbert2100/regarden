@@ -51,7 +51,7 @@ export default function Card(props) {
   return (
     <div>
         <div>
-            <div data-tilt data-tilt-reverse="true" className='border-2 border-black card rounded-xl w-full max-w-xs flex flex-col p-5'>
+            <div data-tilt data-tilt-reverse="true" className='bg-white border-2 border-black card rounded-xl w-full max-w-xs flex flex-col p-5'>
                 <div className='inner flex justify-between mb-3'>
                     <h1><span className={rarity_text}>{rarity}</span></h1>
                     <p>#{props.identifier}</p>

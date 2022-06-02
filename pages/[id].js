@@ -60,18 +60,20 @@ export default function Slot({CONNECTION, S_URL, KEY, ADDRESS}) {
         <Warning />
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <section className='min-h-screen pt-28 flex flex-col items-center mb-14'>
-                <Card identifier={slot.id} rarity={slot.rarity} src={slot.imageURL} name={slot.name} />
+            <div className='bg-color-2'>
+                <section className='min-h-screen py-28 flex flex-col items-center'>
+                    <Card identifier={slot.id} rarity={slot.rarity} src={slot.imageURL} name={slot.name} />
 
-                <Panel link={slot.address} />
+                    <Panel link={slot.address} />
 
-                <div className='mt-10 border-black border-2 rounded p-5'>
-                    <p className='mb-1 text-sm'>Owned by</p>
-                    <Link href={"/address/" + slot.address}><h1 className='cursor-pointer text-2xl break-all mb-5'>{slot.address}</h1></Link>
-                    <p className='mb-1 text-sm'>Seed</p>
-                    <h1 className='text-2xl'>{slot.seed}</h1>
-                </div>
-            </section>
+                    <div className='mt-10 border-black border-2 rounded p-5 bg-white'>
+                        <p className='mb-1 text-sm'>Owned by</p>
+                        <Link href={"/address/" + slot.address}><h1 className='cursor-pointer text-xl break-all mb-5'>{slot.address}</h1></Link>
+                        <p className='mb-1 text-sm'>Seed</p>
+                        <h1 className='text-xl'>{slot.seed}</h1>
+                    </div>
+                </section>
+            </div>
         </motion.div>
     </>
   )

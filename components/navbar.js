@@ -1,10 +1,16 @@
 import { LoginContext } from '../contexts/handleLogin.js';
 import { useState, useContext } from 'react';
+import { motion } from "framer-motion";
 import Link from 'next/link';
 
 export default function Navbar() {
     const {isLoggedIn, substringAccount, currentAccount, Connect} = useContext(LoginContext);
     const [isOpen, setIsOpen] = useState(false);
+
+    const variants = {
+        open: { opacity: 1, y: 0},
+        closed: { opacity: 1, y: "-100%", display: 'none'},
+      }
 
     async function handleMenu() {
         if(isOpen == false) {
@@ -15,8 +21,8 @@ export default function Navbar() {
     }
 
     return (
-        <nav id='container' className='fixed w-full z-50 bg-white'>
-            <div id='nav' className='py-5 border-black border-b-2'>
+        <nav id='container' className='fixed w-full'>
+            <div id='nav' className='py-5 border-black border-b-2 bg-white z-50'>
                 <section className='flex items-center justify-between'>
                     <Link href='/'>
                         <div className='flex items-center cursor-pointer justify-center'>
@@ -24,7 +30,7 @@ export default function Navbar() {
                         </div>
                     </Link>
 
-                    <div className='hidden lg:grid grid-cols-2 items-center text-center gap-3'>
+                    <div className='hidden md:grid grid-cols-2 items-center text-center gap-3'>
                         <Link href='/mint'>
                             <div className='bg-black w-40 text-center cursor-pointer'>
                                 <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
@@ -52,7 +58,7 @@ export default function Navbar() {
                         }
                     </div>
 
-                    <div className='grid lg:hidden'>
+                    <div className='grid md:hidden'>
                         {isOpen ?
                             <button onClick={handleMenu}><img src='/close.svg' alt='Close Menu' className='w-10' /></button>
                             :
@@ -62,8 +68,8 @@ export default function Navbar() {
                 </section>
             </div>
 
-            {isOpen ?
-                <div className='w-full p-5 glass lg:hidden border-b-2 border-black'>
+            <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
+                <div className='w-full p-5 md:hidden border-b-2 border-black bg-white'>
                     <div className='flex flex-col items-center'>
                         <Link href='/mint'>
                             <div className='bg-black w-full text-center cursor-pointer mb-2'>
@@ -92,9 +98,7 @@ export default function Navbar() {
                         }
                     </div>
                 </div>
-                :
-                <></>
-            }
+            </motion.nav>
         </nav>
     )
 }
