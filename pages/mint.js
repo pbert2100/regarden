@@ -131,7 +131,7 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
                                 <p className='my-2'>By minting a slot you agree with the <Link href="/about"><span className='underline cursor-pointer'>Terms of Use</span></Link></p>
                                 <button type='submit'>
                                     <div className='bg-black cursor-pointer'>
-                                        <div className='border-black border-2 bg-color-2 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
+                                        <div className='border-black border-2 bg-color-5 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
                                             <h1>Mint</h1>
                                         </div>
                                     </div>

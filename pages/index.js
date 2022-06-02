@@ -13,20 +13,22 @@ export default function Home() {
 
       <div className='border-black border-b-2 min-h-screen grid place-items-center'>
         <section className='grid md:grid-cols-2 py-20 gap-10'>
-          <div>
-            <h1 className='text-4xl mb-5'>One NFT to rule them all</h1>
-            <p className='text-xl'>Mint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
-            <Link href='/mint'>
-              <div className='bg-black w-40 text-center mt-10 cursor-pointer'>
-                <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
-                  <h1>Get Started</h1>
+          <div className='grid place-items-center'>
+            <div>
+              <h1 className='text-4xl mb-5'>One NFT to rule them all</h1>
+              <p className='text-xl'>Mint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
+              <Link href='/mint'>
+                <div className='bg-black w-40 text-center mt-10 cursor-pointer'>
+                  <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1'>
+                    <h1>Get Started</h1>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
 
-          <div className='grid place-items-center md:pt-20 pt-0'>
-            <img className='' src='/atv.svg' alt='Instruction Image'></img>
+          <div className='pt-20 md:pt-0 grid'>
+            <img className='max-w-xl' src='/atv.svg' alt='Instruction Image'></img>
           </div>
         </section>
       </div>
@@ -46,7 +48,7 @@ export default function Home() {
           </div>
 
           <div className='grid place-items-center'>
-            <img className='' src='/code_back_test.svg' alt='Instruction Image'></img>
+            <img className='max-w-xl' src='/code_back_test.svg' alt='Instruction Image'></img>
           </div>
         </section>
       </div>
@@ -65,7 +67,7 @@ export default function Home() {
           </div>
 
           <div className='grid place-items-center'>
-            <img className='w-52' src='/rarity.svg' alt='Rarity Image'></img>
+            <img className='max-w-sm' src='/rarity.svg' alt='Rarity Image'></img>
           </div>
         </section>
       </div>

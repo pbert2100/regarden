@@ -93,7 +93,7 @@ export default function Address({CONNECTION, S_URL, KEY, ADDRESS}) {
             </section>
         </div>
 
-        <div className='min-h-screen bg-color-4'>
+        <div className='min-h-screen'>
             <section className='py-10'>
                 <div className='mb-5 flex items-end'>
                     <h1 className='text-2xl'>Slots</h1>
