@@ -118,7 +118,7 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
             </section>
         </div>
 
-        <div className='min-h-screen bg-blue-100 grid place-items-center'>
+        <div className='min-h-screen grid place-items-center'>
             <section className='grid place-items-center'>
                 {substringAccount ?
                     <div className='rounded-xl bg-black'>
