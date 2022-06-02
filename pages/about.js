@@ -7,12 +7,12 @@ export default function About() {
         <meta charSet="utf-8" />
         <title>Regarden - About</title>
         <meta name="author" content="Regarden" />
-        <meta name="description" content="Read and understand the community rules and terms of use." />
+        <meta name="description" content="Read and understand the community rules and terms of use!" />
       </Head>
 
       <section className="pt-28">
         <h1 className="text-2xl">Terms of Use, Service and Conditions</h1>
-        <h1 className="p-5 my-5 digital animate-pulse digital-red bg-digital-red rounded digital-border shadow w-full">! By accessing this website and using our services, you accept these terms and conditions. Do not continue to use MintME if you do not agree to take all of the terms and conditions stated on this page !</h1>
+        <h1 className="p-5 my-5 rounded w-full border-2 border-black">By accessing this website and using our services, you accept these terms and conditions. Do not continue to use MintME if you do not agree to take all of the terms and conditions stated on this page !</h1>
       </section>
 
       <section>
@@ -37,7 +37,7 @@ export default function About() {
         <p>3.5. Your continued use of our website will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.</p>
       </section>
 
-      <section className="pt-10">
+      <section className="py-10">
         <h1 className="mb-5">4. Infraestructure</h1>
         <p className="mb-5">4.1. To use acess our website and use our services, you need to have some understand about blockchain, smart contracts, Ethereum and NFTs.Your privacy is important to us. It is mintmes policy to respect your privacy regarding any information we may collect from you across our website, mintme, and other sites we own and operate.</p>
         <p className="mb-5">4.2. We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why were collecting it and how it will be used.</p>

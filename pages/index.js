@@ -36,7 +36,13 @@ export default function Home() {
           <div>
             <h1 className='text-4xl mb-5'>X-Ray</h1>
             <p className='text-xl mb-5'>Each virtual identity has a corresponding slot in the smart contract indexed by a unique number! The rarity of the slot is also stored in the smart contract, making it immutable.</p>
-            <p className='text-xl'>You can edit some data of your virtual identity, such as name and image Off Chain data is editable</p>
+            <p className='text-xl mb-5'>You can edit some data of your virtual identity, such as name and image Off Chain data is editable</p>
+          
+            <div className='flex'>
+              <Link href='/about'>
+                <p className='text-lg cursor-pointer underline'>Read more</p>
+              </Link>
+            </div>
           </div>
 
           <div className='grid place-items-center'>
@@ -49,7 +55,13 @@ export default function Home() {
         <section className='grid md:grid-cols-2 py-20 gap-10'>
           <div>
             <h1 className='text-4xl mb-5'>Share your exclusivity</h1>
-            <p className='text-xl'>Code free experience Off-chain dataMint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
+            <p className='text-xl mb-5'>Code free experience Off-chain dataMint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
+            
+            <div className='flex'>
+              <Link href='/0'>
+                <p className='text-lg cursor-pointer underline'>Take a look</p>
+              </Link>
+            </div>
           </div>
 
           <div className='grid place-items-center'>
@@ -58,25 +70,13 @@ export default function Home() {
         </section>
       </div>
 
-      <div className='border-black border-b-2 bg-color-2'>
-        <section className='py-10 grid place-items-center'>
-          <h1 className='text-3xl'>Looking for someone?</h1>
-          <p>With regarden you can find anyone with their number ID!</p>
-
-          <div className='flex flex-items-center mt-5'>
-            <input placeholder='#ID' className='border-black border-2 p-2' />
-            <button className='py-2 px-10 bg-black text-white'><h1>Search</h1></button>
-          </div>
-        </section>
-      </div>
-
       <div className='py-5 w-full bg-black text-white text-center'>
         <h1 className='text-xl'>The simplicity tastes different...</h1>
       </div>
 
-      <div className='min-h-screen grid place-items-center text-center'>
+      <div className='border-black border-b-2 min-h-screen grid place-items-center text-center'>
         <div className='flex flex-col items-center'>
-          <h1 className='text-5xl mb-5'>Nostrud laboris ad Lorem minim.</h1>
+          <h1 className='text-5xl mb-5'>Join the community!</h1>
           <p className='max-w-2xl'>Lorem cillum anim excepteur tempor voluptate duis id deserunt in pariatur cillum eiusmod fugiat. Duis voluptate fugiat tempor id ut.</p>
         
           <Link href='/mint'>
@@ -89,6 +89,18 @@ export default function Home() {
 
           <img alt='Ethereum' className='max-w-sm mt-10' src='/atv2.svg'></img>
         </div>
+      </div>
+
+      <div className='bg-color-1'>
+        <section className='py-10 grid place-items-center'>
+          <h1 className='text-3xl'>Looking for someone?</h1>
+          <p>With regarden you can find anyone with their number ID!</p>
+
+          <div className='flex flex-items-center mt-5'>
+            <input placeholder='#ID' className='border-black border-2 p-2' />
+            <button className='py-2 px-10 bg-black text-white'><h1>Search</h1></button>
+          </div>
+        </section>
       </div>
     </>
   )
