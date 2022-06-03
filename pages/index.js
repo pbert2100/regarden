@@ -1,8 +1,21 @@
+import { useRouter } from 'next/router';
 import { motion } from "framer-motion";
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
 export default function Home() {
+  const [formInput, updateFormInput] = useState({slotID: 0})
+  const id = formInput.slotID;
+  const router = useRouter();
+
+  async function redirect() {
+    const id = formInput.slotID;
+
+    if(isNaN(id) == false) {
+      router.push('/' + id)
+    }
+  }
   return (
     <>
       <Head>
@@ -94,11 +107,11 @@ export default function Home() {
         <div className='bg-color-1'>
           <section className='py-10 grid place-items-center text-center'>
             <h1 className='text-2xl md:text-3xl'>Looking for someone?</h1>
-            <p>With regarden you can find anyone with their number ID!</p>
+            <p>With regarden you can find anyone with their slot number!</p>
 
             <div className='flex flex-items-center mt-5'>
-              <input placeholder='#ID' className='border-black border-2 p-2' />
-              <button className='py-2 px-10 bg-black text-white transition ease-in-out duration-200 hover:bg-neutral-900'><h1>Search</h1></button>
+              <input type='text' placeholder='Slot number' className='border-black border-2 p-2' onChange={e => updateFormInput({ ...formInput, slotID: e.target.value })} />
+              <button onClick={redirect} className='py-2 px-10 bg-black text-white transition ease-in-out duration-200 hover:bg-neutral-900'><h1>Search</h1></button>
             </div>
           </section>
         </div>

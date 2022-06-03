@@ -13,7 +13,7 @@ export default function About() {
       </Head>
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-        <div className='border-black border-b-2 min-h-screen grid place-items-center text-center'>
+        <div className='border-black border-b-2 min-h-screen grid place-items-center text-center pt-28 pb-10'>
             <section className='flex flex-col items-center'>
                 <h1 className='text-3xl md:text-4xl mb-5'>Oops!</h1>
                 <p className='text-lg md:max-w-xl'>I&apos;m afraid we couldn&apos;t find the page you&apos;re looking for! Maybe you want to try something different?</p>
