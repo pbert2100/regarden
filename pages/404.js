@@ -7,16 +7,16 @@ export default function About() {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <title>Regarden - About</title>
+        <title>Regarden - 404</title>
         <meta name="author" content="Regarden" />
-        <meta name="description" content="Read and understand the community rules and terms of use!" />
+        <meta name="description" content="I'm afraid we couldn't find the page you're looking for!" />
       </Head>
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
         <div className='border-black border-b-2 min-h-screen grid place-items-center text-center'>
             <section className='flex flex-col items-center'>
                 <h1 className='text-3xl md:text-4xl mb-5'>Oops!</h1>
-                <p className='text-lg md:max-w-xl'>I'm afraid we couldn't find the page you're looking for! Maybe you want to try something different?</p>
+                <p className='text-lg md:max-w-xl'>I&apos;m afraid we couldn&apos;t find the page you&apos;re looking for! Maybe you want to try something different?</p>
             
                 <Link href='/mint'>
                     <div className='bg-black w-40 text-center mt-5 cursor-pointer'>
