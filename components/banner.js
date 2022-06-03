@@ -46,7 +46,10 @@ export default function Banner(props) {
             <div className='bg-black rounded cursor-pointer'>
                 <div className='border-2 border-black bg-white rounded p-5 flex justify-between transition ease-in-out duration-200 hover:brightness-95 hover:-translate-x-1 hover:-translate-y-1'>
                     <div>
-                        <h1 className='text-sm mb-1'><span className={rarity_text}>{rarity}</span> <span className='text-xs text-neutral-600'>Tier</span></h1>
+                        <div className='text-sm mb-1 flex items-center'>
+                            <h1 className={rarity_text}>{rarity}</h1>
+                            <p className='text-xs text-neutral-600 ml-1'>Tier</p>
+                        </div>
                         <h1 className='text-xl'>{props.name}</h1>
                     </div>
                     

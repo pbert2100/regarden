@@ -36,7 +36,7 @@ export default function Home() {
         </div>
 
         <div className='border-black border-b-2'>
-          <section className='grid md:grid-cols-2 py-20 gap-10'>
+          <section className='grid md:grid-cols-2 py-10 md:py-20 gap-10'>
             <div>
               <h1 className='text-3xl md:text-4xl mb-5'>X-Ray</h1>
               <p className='text-lg md:text-xl mb-5'>Each virtual identity has a corresponding slot in the smart contract indexed by a unique number! The rarity of the slot is also stored in the smart contract, making it immutable.</p>
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
 
         <div className='border-black border-b-2'>
-          <section className='grid md:grid-cols-2 py-20 gap-10'>
+          <section className='grid md:grid-cols-2 py-10 md:py-20 gap-10'>
             <div>
               <h1 className='text-3xl md:text-4xl mb-5'>Share your exclusivity</h1>
               <p className='text-lg md:text-xl mb-5'>Random rarity tier Code free experience Off-chain dataMint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
