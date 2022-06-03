@@ -59,7 +59,7 @@ export default function Home() {
           <section className='grid md:grid-cols-2 py-20 gap-10'>
             <div>
               <h1 className='text-3xl md:text-4xl mb-5'>Share your exclusivity</h1>
-              <p className='text-lg md:text-xl mb-5'>Code free experience Off-chain dataMint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
+              <p className='text-lg md:text-xl mb-5'>Random rarity tier Code free experience Off-chain dataMint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
               
               <div className='flex'>
                 <Link href='/0'>
@@ -69,7 +69,7 @@ export default function Home() {
             </div>
 
             <div className='grid place-items-center'>
-              <img className='max-w-sm' src='/rarity.svg' alt='Rarity Image'></img>
+              <img className='max-w-xs md:max-w-sm' src='/rarity.svg' alt='Rarity Image'></img>
             </div>
           </section>
         </div>
@@ -91,7 +91,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <img alt='Ethereum' className='max-w-xs mt-10' src='/tomada.svg'></img>
+            <img alt='Ethereum' className='max-w-xs mt-10' src='/power.svg'></img>
           </div>
         </div>
 
