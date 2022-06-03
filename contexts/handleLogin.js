@@ -18,6 +18,8 @@ export const LoginProvider = ({ children }) => { // EXPORTING THE PROVIDER
                 setAccount(connectedAccount);
                 setLoggedIn(true);
             }
+        } else {
+            document.getElementById("noWalletWarning").classList.remove("hidden");
         };
     };
 

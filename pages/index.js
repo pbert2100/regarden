@@ -74,10 +74,6 @@ export default function Home() {
           </section>
         </div>
 
-        <div className='py-5 w-full bg-black text-white text-center'>
-          <h1 className='text-lg md:text-xl'>The simplicity looks different...</h1>
-        </div>
-
         <div className='border-black border-b-2 min-h-screen grid place-items-center text-center'>
           <div className='flex flex-col items-center'>
             <h1 className='text-3xl md:text-4xl mb-5'>Be connected to the community!</h1>
@@ -96,7 +92,7 @@ export default function Home() {
         </div>
 
         <div className='bg-color-1'>
-          <section className='py-10 grid place-items-center'>
+          <section className='py-10 grid place-items-center text-center'>
             <h1 className='text-2xl md:text-3xl'>Looking for someone?</h1>
             <p>With regarden you can find anyone with their number ID!</p>
 
