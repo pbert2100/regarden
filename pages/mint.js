@@ -124,7 +124,7 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
             <div id='noWalletWarning' className='bg-black bg-opacity-75 min-h-screen w-full flex justify-center items-center fixed hidden z-10'>
                 <section className='flex justify-center'>
                     <div className='bg-white rounded border-black border-2 max-w-md w-full p-5 text-center'>
-                        <p className='mb-5 text-lg'>You must install Metamask first!</p>
+                        <p className='mb-5 text-lg'>You need to install <Link href="https://metamask.io/download/"><span className='underline cursor-pointer'>MetaMask</span></Link> first!</p>
                         <button onClick={closeWarning} className='w-full'>
                             <div className='bg-black cursor-pointer'>
                                 <div className='border-black border-2 bg-color-1 p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
@@ -165,7 +165,7 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
                         </div>
                         :
                         <div className='grid place-items-center'>
-                            <p>Mint yout slot right know</p>
+                            <p>Easy and quick the way you like it</p>
                             <h1 className='text-3xl md:text-4xl mb-5 text-center mt-1'>You need to connect your wallet!</h1>
                             <button onClick={Connect}>
                                 <div className='bg-black w-40 text-center cursor-pointer'>

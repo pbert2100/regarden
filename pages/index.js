@@ -53,7 +53,7 @@ export default function Home() {
             <div>
               <h1 className='text-3xl md:text-4xl mb-5'>X-Ray</h1>
               <p className='text-lg md:text-xl mb-5'>Each virtual identity has a corresponding slot in the smart contract indexed by a unique number! The rarity of the slot is also stored in the smart contract, making it immutable.</p>
-              <p className='text-lg md:text-xl mb-5'>You can edit some data of your virtual identity, such as name and image Off Chain data is editable</p>
+              <p className='text-lg md:text-xl mb-5'>You can edit some data of your virtual identity, such as name and image, because it is stored as off-chain!</p>
             
               <div className='flex'>
                 <Link href='/about'>
@@ -72,7 +72,7 @@ export default function Home() {
           <section className='grid md:grid-cols-2 py-10 md:py-20 gap-10'>
             <div>
               <h1 className='text-3xl md:text-4xl mb-5'>Share your exclusivity</h1>
-              <p className='text-lg md:text-xl mb-5'>Random rarity tier Code free experience Off-chain dataMint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
+              <p className='text-lg md:text-xl mb-5'>Each slot has a random rarity tier, it can be common, uncommon, rare, legendary, epic or royal. Only the first 25 slots gets the limited tier!</p>
               
               <div className='flex'>
                 <Link href='/0'>
@@ -90,7 +90,7 @@ export default function Home() {
         <div className='border-black border-b-2 min-h-screen grid place-items-center text-center'>
           <div className='flex flex-col items-center'>
             <h1 className='text-3xl md:text-4xl mb-5'>Be connected to the community!</h1>
-            <p className='text-lg md:max-w-xl'>Lorem cillum anim excepteur tempor voluptate duis id deserunt in pariatur cillum eiusmod fugiat. Duis voluptate fugiat tempor id ut.</p>
+            <p className='text-lg md:max-w-xl'>Get started now and be part of this growing community with your unique virtual identity!</p>
           
             <Link href='/mint'>
               <div className='bg-black w-40 text-center mt-5 cursor-pointer'>
@@ -107,7 +107,7 @@ export default function Home() {
         <div className='bg-color-1'>
           <section className='py-10 grid place-items-center text-center'>
             <h1 className='text-2xl md:text-3xl'>Looking for someone?</h1>
-            <p>With regarden you can find anyone with their slot number!</p>
+            <p>You can find anyone with their slot number!</p>
 
             <div className='flex flex-items-center mt-5'>
               <input type='text' placeholder='Slot number' className='border-black border-2 p-2' onChange={e => updateFormInput({ ...formInput, slotID: e.target.value })} />
