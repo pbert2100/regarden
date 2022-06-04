@@ -87,6 +87,25 @@ export default function Home() {
           </section>
         </div>
 
+        <div className='border-black border-b-2'>
+          <section className='grid md:grid-cols-2 py-10 md:py-20 gap-10'>
+            <div>
+              <h1 className='text-3xl md:text-4xl mb-5'>Next goals</h1>
+              <p className='text-lg md:text-xl mb-5'>Despite all the amazing features of the Beta version, we believe it's just the beginning! Take a look at the roadmap to see what the next steps are!</p>
+              
+              <div className='flex'>
+                <Link href='/about'>
+                  <p className='md:text-lg cursor-pointer underline'>Roadmap</p>
+                </Link>
+              </div>
+            </div>
+
+            <div className='grid place-items-center'>
+              <img alt='Roadmap Image' className='max-w-xs md:max-w-sm' src='/05.svg' />
+            </div>
+          </section>
+        </div>
+
         <div className='border-black border-b-2 min-h-screen grid place-items-center text-center'>
           <section className='flex flex-col items-center'>
             <h1 className='text-3xl md:text-4xl mb-5'>Be connected to the community!</h1>
@@ -110,7 +129,7 @@ export default function Home() {
             <p>You can find anyone with their slot number!</p>
 
             <div className='flex flex-items-center mt-5'>
-              <input type='text' placeholder='Slot number' className='border-black border-2 p-2' onChange={e => updateFormInput({ ...formInput, slotID: e.target.value })} />
+              <input type='text' placeholder='Slot number' className='border-black border-2 p-2 transition ease-in-out duration-200 outline-none hover:brightness-95 focus:brightness-95' onChange={e => updateFormInput({ ...formInput, slotID: e.target.value })} />
               <button onClick={redirect} className='py-2 px-10 bg-black text-white transition ease-in-out duration-200 hover:bg-neutral-900'><h1>Search</h1></button>
             </div>
           </section>

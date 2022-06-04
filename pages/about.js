@@ -26,6 +26,11 @@ export default function About() {
           <p>2.4. Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.</p>
         </section>
 
+        <section id="roadmap">
+          <h1 className="mb-5">1. Roadmap</h1>
+          <p className="mb-5">1.1. Edit, transfer, expire (supabase)</p>
+        </section>
+
         <section className="pt-10">
           <h1 className="mb-5">2. Privacy</h1>
           <p className="mb-5">2.1. Your privacy is important to us. It is mintmes policy to respect your privacy regarding any information we may collect from you across our website, mintme, and other sites we own and operate. We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why were collecting it and how it will be used.</p>

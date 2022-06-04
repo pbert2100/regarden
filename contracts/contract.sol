@@ -19,7 +19,6 @@ contract VI {
         uint id;
         address payable sAddress;
         uint rarity;
-        bool expired;
     }
 
     uint public numSlots = 0;
@@ -27,9 +26,10 @@ contract VI {
 
     event Minted(uint256 indexed _slotID, address indexed _address, uint256 _rarity);
     event Transfered(address indexed _from, address indexed _to, uint256 indexed _slotID);
-    event Rarity(uint indexed _slotID, uint indexed _seed, address indexed _sender, uint _timestamp, uint _difficulty, uint _numSlots, uint _blockNumber);
-    event Expired(uint indexed _slotID);
-    event RevertExpired(uint indexed _slotID);
+
+    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
+    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
+    event ApprovalForAll(address indexed owner, address indexed operator, bool approved);
 
     function Mint(uint _seed) public payable returns (uint slotID) {
         require(msg.value == mintPrice);
@@ -39,7 +39,6 @@ contract VI {
 
         s.id = slotID;
         s.sAddress = payable(msg.sender);
-        s.expired = false;
 
         uint random_number = uint(keccak256(abi.encodePacked(_seed, block.timestamp, block.difficulty, msg.sender, numSlots, block.number + 1))) % 100;
 
@@ -57,7 +56,6 @@ contract VI {
         payable(owner).transfer(msg.value);
 
         emit Minted(s.id, s.sAddress, s.rarity);
-        emit Rarity(slotID, _seed, msg.sender, block.timestamp, block.difficulty, numSlots, block.number);
     }
 
     function fetchSlots(uint _range) public view returns (Slot[] memory) {
@@ -120,31 +118,56 @@ contract VI {
         return _slots;
     }
 
-    function Transfer(uint _id , address _from, address _to) public payable {
+    function balanceOf(address _owner) external view returns (uint256) {
+        uint count = 0;
+
+        for (uint i = 0; i < numSlots; i++) {
+            Slot storage currentSlot = slots[i];
+            if (currentSlot.sAddress == _owner) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+    
+    function ownerOf(uint256 _tokenId) external view returns (address) {
+        return slots[_tokenId].sAddress;
+    }
+    
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;
+    
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;
+
+    function transferFrom(uint _id , address _from, address _to) external payable {
         Slot storage s = slots[_id];
 
-        require(msg.sender == s.sAddress && _from != address(0) && _to != address(0) && s.expired == false);
+        require(msg.sender == s.sAddress && _from != address(0) && _to != address(0));
         
         s.sAddress = payable(_to);
 
         payable(_from).transfer(msg.value);
 
-        emit Transfered(_from, _to, s.id);
+        emit Transfer(_from, _to, s.id);
     }
 
-    function Expire(uint _id) public isOwner {
-        Slot storage s = slots[_id];
-        s.expired = true;
+    function approve(address to, uint256 tokenId) public {
+        address owner = ownerOf(tokenId);
+        require(to != owner, "ERC721: approval to current owner");
 
-        emit Expired(s.id);
+        require(msg.sender == owner || isApprovedForAll(owner, msg.sender),
+            "ERC721: approve caller is not owner nor approved for all"
+        );
+
+        _tokenApprovals[tokenId] = to;
+        emit Approval(owner, to, tokenId);
     }
-
-    function revertExpired(uint _id) public isOwner {
-        Slot storage s = slots[_id];
-        s.expired = false;
-
-        emit RevertExpired(s.id);
-    }
+    
+    function setApprovalForAll(address _operator, bool _approved) external;
+    
+    function getApproved(uint256 _tokenId) external view returns (address);
+    
+    function isApprovedForAll(address _owner, address _operator) external view returns (bool);
 
     function transferOwnership(address _newOwner) public isOwner {
         require(_newOwner != address(0));
@@ -152,7 +175,6 @@ contract VI {
     }
 
     function changeMintPrice(uint _newPrice) public isOwner {
-        require(_newPrice > 0);
         mintPrice = _newPrice;
     }
 }
