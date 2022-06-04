@@ -20,7 +20,7 @@ export default function Navbar() {
                 <section className='flex items-center justify-between'>
                     <Link href='/'>
                         <div className='flex items-center cursor-pointer justify-center'>
-                            <img alt='Logo' src='/try2.svg' className='w-40' />
+                            <img alt='Logo' src='/logo.svg' className='w-40' />
                         </div>
                     </Link>
 

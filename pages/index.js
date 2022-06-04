@@ -43,7 +43,7 @@ export default function Home() {
             </div>
 
             <div className='pt-20 md:pt-0'>
-              <img className='max-w-xl' src='/atv.svg' alt='Instruction Image'></img>
+              <img alt='Apresentation Image' className='max-w-xl' src='/01.svg' />
             </div>
           </section>
         </div>
@@ -63,7 +63,7 @@ export default function Home() {
             </div>
 
             <div className='grid place-items-center'>
-              <img className='max-w-xl' src='/code_back_test.svg' alt='Instruction Image'></img>
+              <img alt='Instruction Image' className='max-w-xl' src='/02.svg' />
             </div>
           </section>
         </div>
@@ -82,13 +82,13 @@ export default function Home() {
             </div>
 
             <div className='grid place-items-center'>
-              <img className='max-w-xs md:max-w-sm' src='/rarity.svg' alt='Rarity Image'></img>
+              <img alt='Rarity Image' className='max-w-xs md:max-w-sm' src='/03.svg' />
             </div>
           </section>
         </div>
 
         <div className='border-black border-b-2 min-h-screen grid place-items-center text-center'>
-          <div className='flex flex-col items-center'>
+          <section className='flex flex-col items-center'>
             <h1 className='text-3xl md:text-4xl mb-5'>Be connected to the community!</h1>
             <p className='text-lg md:max-w-xl'>Get started now and be part of this growing community with your unique virtual identity!</p>
           
@@ -100,8 +100,8 @@ export default function Home() {
               </div>
             </Link>
 
-            <img alt='Ethereum' className='max-w-xs mt-10' src='/power.svg'></img>
-          </div>
+            <img alt='Connected Image' className='max-w-xs mt-10' src='/04.svg' />
+          </section>
         </div>
 
         <div className='bg-color-1'>

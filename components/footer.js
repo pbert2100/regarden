@@ -11,7 +11,7 @@ export default function Footer() {
             <section className='py-10 flex flex-col-reverse sm:flex-row gap-10 items-center justify-between'>
                 <Link href='/'>
                     <div className='items-center cursor-pointer justify-center'>
-                        <img alt='Logo' src='/try2.svg' className='w-32' />
+                        <img alt='Logo' src='/logo.svg' className='w-32' />
                     </div>
                 </Link>
 
