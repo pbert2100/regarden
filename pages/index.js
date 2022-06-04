@@ -91,7 +91,7 @@ export default function Home() {
           <section className='grid md:grid-cols-2 py-10 md:py-20 gap-10'>
             <div>
               <h1 className='text-3xl md:text-4xl mb-5'>Next goals</h1>
-              <p className='text-lg md:text-xl mb-5'>Despite all the amazing features of the Beta version, we believe it's just the beginning! Take a look at the roadmap to see what the next steps are!</p>
+              <p className='text-lg md:text-xl mb-5'>Despite all the amazing features of the Beta version, we believe it&apos;s just the beginning! Take a look at the roadmap to see what the next steps are!</p>
               
               <div className='flex'>
                 <Link href='/about'>
