@@ -40,7 +40,7 @@ export default function Slot({CONNECTION, S_URL, KEY, ADDRESS}) {
         let row = await createClient(S_URL, KEY).from('Adressess').select('*').eq('slot', id) // FETCH SLOT DATA BY ID FROM SUPABASE
 
         const s = await Promise.all(slt.map(async i => { // MAKING SLOT WITH THE BLOCKCHAIN AND SUPABASE DATA
-            let it = {id: String(i.id), address: i.sAddress, name: row.data[0].name, imageURL: row.data[0].imageURL, rarity: String(i.rarity), verified: row.data[0].verified, seed: row.data[0].seed}
+            let it = {id: String(i.tokenId), address: i.owner, name: row.data[0].name, imageURL: row.data[0].imageURL, rarity: String(i.rarity), verified: row.data[0].verified, seed: row.data[0].seed}
       
             return it
         }))
@@ -54,7 +54,7 @@ export default function Slot({CONNECTION, S_URL, KEY, ADDRESS}) {
             <meta charSet="utf-8" />
             <title>Regarden - {slot.name}</title>
             <meta name="author" content="Regarden" />
-            <meta name="description" content="Enjoy and share this virtual identity." />
+            <meta name="description" content="Enjoy and share this NFT identity!" />
         </Head>
 
         <Warning />

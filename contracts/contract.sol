@@ -3,11 +3,16 @@ pragma solidity >=0.6.0 <0.9.0;
 
 contract VI {
     address payable owner;
-    uint public mintPrice;
+    uint private mintPrice;
+    string private _symbol;
+    string private _name;
+    uint public numSlots = 0;
 
     constructor() {
         owner = payable(msg.sender);
         mintPrice = 3000000000000000;
+        _symbol = 'SLT';
+        _name = 'SLOT';
     }
 
     modifier isOwner() {
@@ -16,31 +21,30 @@ contract VI {
     }
 
     struct Slot {
-        uint id;
-        address payable sAddress;
+        uint tokenId;
+        address payable owner;
         uint rarity;
     }
 
-    uint public numSlots = 0;
     mapping (uint => Slot) slots;
+    mapping(address => mapping(address => bool)) private _operatorApprovals;
+    mapping(uint256 => address) private _tokenApprovals;
 
-    event Minted(uint256 indexed _slotID, address indexed _address, uint256 _rarity);
-    event Transfered(address indexed _from, address indexed _to, uint256 indexed _slotID);
-
+    event Minted(uint256 indexed tokenId, uint256 indexed seed, uint256 indexed rarity);
     event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
     event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
     event ApprovalForAll(address indexed owner, address indexed operator, bool approved);
 
-    function Mint(uint _seed) public payable returns (uint slotID) {
+    function Mint(uint seed) public payable returns (uint slotID) {
         require(msg.value == mintPrice);
 
         slotID = numSlots++;
         Slot storage s = slots[slotID];
 
-        s.id = slotID;
-        s.sAddress = payable(msg.sender);
+        s.tokenId = slotID;
+        s.owner = payable(msg.sender);
 
-        uint random_number = uint(keccak256(abi.encodePacked(_seed, block.timestamp, block.difficulty, msg.sender, numSlots, block.number + 1))) % 100;
+        uint random_number = uint(keccak256(abi.encodePacked(seed, block.timestamp, block.difficulty, msg.sender, numSlots, block.number + 1, slotID))) % 100;
 
         if(slotID < 25) {
             s.rarity = 0;
@@ -55,7 +59,7 @@ contract VI {
 
         payable(owner).transfer(msg.value);
 
-        emit Minted(s.id, s.sAddress, s.rarity);
+        emit Minted(s.tokenId, seed, s.rarity);
     }
 
     function fetchSlots(uint _range) public view returns (Slot[] memory) {
@@ -71,7 +75,7 @@ contract VI {
 
         for (uint i = 0; i < numSlots; i++) {
             Slot storage currentSlot = slots[i];
-            if (currentSlot.id < range) {
+            if (currentSlot.tokenId < range) {
                 _slots[newCount] = currentSlot;
                 newCount++;
             }
@@ -80,12 +84,12 @@ contract VI {
         return _slots;
     }
 
-    function fetchSlotByID(uint _id) public view returns (Slot[] memory) {
+    function fetchSlotByID(uint tokenId) public view returns (Slot[] memory) {
         Slot[] memory _slot = new Slot[](1);
 
         for (uint i = 0; i < numSlots; i++) {
             Slot storage currentSlot = slots[i];
-            if (currentSlot.id == _id) {
+            if (currentSlot.tokenId == tokenId) {
                 _slot[0] = currentSlot;
             }
         }
@@ -98,7 +102,7 @@ contract VI {
 
         for (uint i = 0; i < numSlots; i++) {
             Slot storage currentSlot = slots[i];
-            if (currentSlot.sAddress == _address) {
+            if (currentSlot.owner == _address) {
                 count++;
             }
         }
@@ -109,7 +113,7 @@ contract VI {
 
         for (uint i = 0; i < numSlots; i++) {
             Slot storage currentSlot = slots[i];
-            if (currentSlot.sAddress == _address) {
+            if (currentSlot.owner == _address) {
                 _slots[newCount] = currentSlot;
                 newCount++;
             }
@@ -123,51 +127,72 @@ contract VI {
 
         for (uint i = 0; i < numSlots; i++) {
             Slot storage currentSlot = slots[i];
-            if (currentSlot.sAddress == _owner) {
+            if (currentSlot.owner == _owner) {
                 count++;
             }
         }
 
         return count;
     }
-    
-    function ownerOf(uint256 _tokenId) external view returns (address) {
-        return slots[_tokenId].sAddress;
+
+    function ownerOf(uint256 tokenId) external view returns (address) {
+        return slots[tokenId].owner;
     }
-    
-    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;
-    
-    function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;
 
-    function transferFrom(uint _id , address _from, address _to) external payable {
-        Slot storage s = slots[_id];
+    function _transfer(address from, address to, uint tokenId) internal {
+        Slot storage s = slots[tokenId];
 
-        require(msg.sender == s.sAddress && _from != address(0) && _to != address(0));
+        require(msg.sender == s.owner && from != address(0) && to != address(0));
         
-        s.sAddress = payable(_to);
+        s.owner = payable(to);
 
-        payable(_from).transfer(msg.value);
+        payable(from).transfer(msg.value);
 
-        emit Transfer(_from, _to, s.id);
+        emit Transfer(from, to, tokenId);
+    }
+
+    function _safeTransfer(address from, address to, uint256 tokenId, bytes memory data) internal {
+        _transfer(from, to, tokenId);
+    }
+
+    function transferFrom(uint tokenId, address from, address to) external payable {        
+        _transfer(from, to, tokenId);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) external payable {
+        _safeTransfer(from, to, tokenId, data);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId) external payable {
+        _safeTransfer(from, to, tokenId, "");
+    }
+
+    function isApprovedForAll(address _owner, address _operator) external view returns (bool) {
+        return _operatorApprovals[_owner][_operator];
     }
 
     function approve(address to, uint256 tokenId) public {
-        address owner = ownerOf(tokenId);
-        require(to != owner, "ERC721: approval to current owner");
+        Slot storage s = slots[tokenId];
 
-        require(msg.sender == owner || isApprovedForAll(owner, msg.sender),
-            "ERC721: approve caller is not owner nor approved for all"
-        );
+        require(msg.sender == s.owner && to != address(0) && to != s.owner);
 
         _tokenApprovals[tokenId] = to;
-        emit Approval(owner, to, tokenId);
+        emit Approval(s.owner, to, tokenId);
     }
-    
-    function setApprovalForAll(address _operator, bool _approved) external;
-    
-    function getApproved(uint256 _tokenId) external view returns (address);
-    
-    function isApprovedForAll(address _owner, address _operator) external view returns (bool);
+
+    function getApproved(uint256 tokenId) external view returns (address) {
+        return _tokenApprovals[tokenId];
+    }
+
+    function _setApprovalForAll(address _owner, address operator, bool approved) internal {
+        require(_owner != operator, "ERC721: approve to caller");
+        _operatorApprovals[_owner][operator] = approved;
+        emit ApprovalForAll(_owner, operator, approved);
+    }
+
+    function setApprovalForAll(address operator, bool approved) external {
+        _setApprovalForAll(msg.sender, operator, approved);
+    }
 
     function transferOwnership(address _newOwner) public isOwner {
         require(_newOwner != address(0));

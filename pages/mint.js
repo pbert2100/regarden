@@ -100,7 +100,7 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
             <meta charSet="utf-8" />
             <title>Regarden - Mint</title>
             <meta name="author" content="Regarden" />
-            <meta name="description" content="Mint your personal slot in a NFT based format." />
+            <meta name="description" content="Mint your personal slot in a NFT format!" />
         </Head>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

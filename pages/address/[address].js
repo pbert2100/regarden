@@ -47,7 +47,7 @@ export default function Address({CONNECTION, S_URL, KEY, ADDRESS}) {
             let rowCount = 0; // ROW COUNTER (NECESSARY TO MATCH THE SUPABASE DATA WITH THE BLOCKCHAIN DATA)
 
             const s = await Promise.all(slt.map(async i => { // MAKING SLOT WITH THE BLOCKCHAIN AND SUPABASE DATA
-                let it = {id: String(i.id), address: i.sAddress, name: row.data[rowCount].name, rarity: String(i.rarity), verified: row.data[rowCount].verified,}
+                let it = {id: String(i.tokenId), address: i.owner, name: row.data[rowCount].name, rarity: String(i.rarity), verified: row.data[rowCount].verified,}
                 console.log("it: " + it)
                 rowCount ++; // INCREMENT THE ROW COUNTER
                 return it
@@ -78,7 +78,7 @@ export default function Address({CONNECTION, S_URL, KEY, ADDRESS}) {
             <meta charSet="utf-8" />
             <title>Regarden - {account}</title>
             <meta name="author" content="Regarden" />
-            <meta name="description" content="Take a look at the slots of this address." />
+            <meta name="description" content="Take a look at the slots of this address!" />
         </Head>
 
         <Warning />

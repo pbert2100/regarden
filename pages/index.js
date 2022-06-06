@@ -22,7 +22,7 @@ export default function Home() {
         <meta charSet="utf-8" />
         <title>Regarden</title>
         <meta name="author" content="Regarden" />
-        <meta name="description" content="Mint and customize your personal identity in a NFT based format!" />
+        <meta name="description" content="Mint and customize your personal NFT identity!" />
       </Head>
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -31,7 +31,7 @@ export default function Home() {
             <div className='grid place-items-center'>
               <div>
                 <h1 className='text-3xl md:text-4xl mb-5'>One NFT to rule them all</h1>
-                <p className='text-lg md:text-xl'>Mint and customize your virtual identity in a NFT basead format for third part uses like metaverse! Get started now and join the community!</p>
+                <p className='text-lg md:text-xl'>Mint and customize your NFT identity for third part uses like metaverse! Get started now and join the community!</p>
                 <Link href='/mint'>
                   <div className='bg-black w-40 text-center mt-5 cursor-pointer'>
                     <div className='border-black border-2 bg-white p-2 transition ease-in-out duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:brightness-90'>
@@ -52,8 +52,8 @@ export default function Home() {
           <section className='grid md:grid-cols-2 py-10 md:py-20 gap-10'>
             <div>
               <h1 className='text-3xl md:text-4xl mb-5'>X-Ray</h1>
-              <p className='text-lg md:text-xl mb-5'>Each virtual identity has a corresponding slot in the smart contract indexed by a unique number! The rarity of the slot is also stored in the smart contract, making it immutable.</p>
-              <p className='text-lg md:text-xl mb-5'>You can edit some data of your virtual identity, such as name and image, because it is stored as off-chain!</p>
+              <p className='text-lg md:text-xl mb-5'>Each NFT identity has a corresponding slot in the smart contract indexed by a unique number! The rarity of the slot is also stored in the smart contract, making it immutable.</p>
+              <p className='text-lg md:text-xl mb-5'>You can edit some data of your NFT identity, such as name and image, because it is stored as off-chain!</p>
             
               <div className='flex'>
                 <Link href='/about'>
@@ -109,7 +109,7 @@ export default function Home() {
         <div className='border-black border-b-2 min-h-screen grid place-items-center text-center'>
           <section className='flex flex-col items-center'>
             <h1 className='text-3xl md:text-4xl mb-5'>Be connected to the community!</h1>
-            <p className='text-lg md:max-w-xl'>Get started now and be part of this growing community with your unique virtual identity!</p>
+            <p className='text-lg md:max-w-xl'>Get started now and be part of this growing community with your unique NFT identity!</p>
           
             <Link href='/mint'>
               <div className='bg-black w-40 text-center mt-5 cursor-pointer'>
