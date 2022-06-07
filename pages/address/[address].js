@@ -48,7 +48,6 @@ export default function Address({CONNECTION, S_URL, KEY, ADDRESS}) {
 
             const s = await Promise.all(slt.map(async i => { // MAKING SLOT WITH THE BLOCKCHAIN AND SUPABASE DATA
                 let it = {id: String(i.tokenId), address: i.owner, name: row.data[rowCount].name, rarity: String(i.rarity), verified: row.data[rowCount].verified,}
-                console.log("it: " + it)
                 rowCount ++; // INCREMENT THE ROW COUNTER
                 return it
             }))
@@ -56,10 +55,6 @@ export default function Address({CONNECTION, S_URL, KEY, ADDRESS}) {
             setTotal(s.length);
             setSlots(s.slice(0, range));
             setRange(range + 10);
-
-            console.log("slt: " + slt)
-            console.log("row: " + row)
-            console.log("s: " + s)
         } catch(e) {
         }
     }

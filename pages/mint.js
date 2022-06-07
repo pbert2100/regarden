@@ -69,9 +69,6 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
             const contract = new web3.eth.Contract(contractABI, ADDRESS); // CREATING CONTRACT
         
             const numSlots = await contract.methods.numSlots().call(); // FETCHING THE NUMBER OF SLOTS
-            const mintPrice = await contract.methods.mintPrice().call(); // FETCHING THE NUMBER OF SLOTS
-
-            console.log('mint price: ' + mintPrice)
         
             const seed = Math.floor(Math.random() * 1000) + 1; // GENERATING THE SEED
         
@@ -79,7 +76,7 @@ export default function Mint({CONNECTION, S_URL, KEY, ADDRESS}) {
                 from: account,
                 to: ADDRESS,
                 gasLimit: 3000001,
-                value: mintPrice,
+                value: 3000000000000000,
             });
         
             // SAVING SLOT DATA IN SUPABASE

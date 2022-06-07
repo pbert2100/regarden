@@ -3,7 +3,7 @@ pragma solidity >=0.6.0 <0.9.0;
 
 contract VI {
     address payable owner;
-    uint private mintPrice;
+    uint public mintPrice;
     string private _symbol;
     string private _name;
     uint public numSlots = 0;
