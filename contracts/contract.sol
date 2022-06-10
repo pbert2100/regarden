@@ -148,6 +148,8 @@ contract VI {
 
         payable(from).transfer(msg.value);
 
+        approve(msg.sender, tokenId);
+
         emit Transfer(from, to, tokenId);
     }
 
